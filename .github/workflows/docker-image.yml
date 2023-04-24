@@ -3,8 +3,12 @@ name: Docker Image CI
 on:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - '*.md'
   pull_request:
     branches: [ "main" ]
+    paths-ignore:
+      - '*.md'
 
 jobs:
 
@@ -14,15 +18,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: docker login
-      env:
-        DOCKER_USER: ${{secrets.DOCKER_USER}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
-test:$(date +%s)
-
-    - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USER}}/docker-jlab
+    - name: Build and push Docker image
+        uses: docker/build-push-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: hgrosselindemann/docker-jlab
+          add_git_labels: true
+          tag_with_ref: true
+          push: ${{ startsWith(github.ref, 'refs/heads/master')}}
