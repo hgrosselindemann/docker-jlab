@@ -6,7 +6,8 @@ ENV JUPYTER_ENABLE_LAB=true
 
 COPY requirements.txt /tmp/
 RUN conda install --yes --file /tmp/requirements_conda.txt && \
-    pip install --no-cache-dir --file /tmp/requirements_pip.txt && \
+    pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r /tmp/requirements_pip.txt && \
     jupyter lab build && \
     # clean conda cache, index and package tarballs
     conda clean -a && \
