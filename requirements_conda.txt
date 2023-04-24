@@ -9,6 +9,7 @@ dask
 dask-jobqueue
 dask-labextension
 distributed
+esmf
 ffmpeg
 git
 git-lfs
