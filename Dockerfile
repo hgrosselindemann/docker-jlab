@@ -5,7 +5,7 @@ FROM jupyter/base-notebook:latest
 ENV JUPYTER_ENABLE_LAB=true
 
 COPY requirements_conda.txt requirements_pip.txt /tmp/
-RUN RUN mkdir -p ~/.jupyterlab/user-settings/@jupyterlab/apputils-extension/ && \
+RUN mkdir -p ~/.jupyterlab/user-settings/@jupyterlab/apputils-extension/ && \
     echo '{ "theme":"JupyterLab Dark" }' > themes.jupyterlab-settings && \
     conda install --yes --file /tmp/requirements_conda.txt && \
     pip install --no-cache-dir --upgrade pip && \
