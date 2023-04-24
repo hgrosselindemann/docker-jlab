@@ -7,7 +7,6 @@ cmaps
 dask
 dask-jobqueue
 dask-labextension
-datetime
 distributed
 ffmpeg
 git
@@ -34,7 +33,6 @@ pip
 pytest
 python-graphviz
 pyviz_comms
-recombinator
 scipy
 seaborn
 seawater
@@ -45,6 +43,4 @@ xmovie
 xesmf
 xeofs
 xrft
-xmhw
-xorca
 zarr
