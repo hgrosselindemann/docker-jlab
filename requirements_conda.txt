@@ -39,6 +39,7 @@ pyviz_comms
 scipy
 seaborn
 seawater
+vim
 xarray
 xgcm
 xhistogram
