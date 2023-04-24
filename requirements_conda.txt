@@ -2,6 +2,7 @@ python>=3.9
 basemap
 cartopy
 cartopy_offlinedata
+cdo
 cmocean
 cmaps
 dask
@@ -19,6 +20,8 @@ matplotlib-base
 nbclassic>=0.2.8  # See https://github.com/jupyterlab/jupyterlab/issues/10228
 nbval
 nbgitpuller
+nco
+ncview
 netcdf4
 nfft
 nodejs
