@@ -7,9 +7,7 @@ ENV JUPYTER_ENABLE_LAB=true
 COPY requirements_conda.txt requirements_pip.txt /tmp/
 COPY overrides.json /opt/conda/share/jupyter/lab/settings/
 
-RUN apt update && \
-    apt install vim && \
-    conda install --yes --file /tmp/requirements_conda.txt && \
+RUN conda install --yes --file /tmp/requirements_conda.txt && \
     pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r /tmp/requirements_pip.txt && \
     jupyter lab build && \
