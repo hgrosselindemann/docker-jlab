@@ -4,8 +4,9 @@ FROM jupyter/base-notebook:latest
 # enable jupyterlab as default app
 ENV JUPYTER_ENABLE_LAB=true
 
-COPY requirements_conda.txt requirements_pip.txt overrides.json /tmp/
-RUN ${NB_PREFIX}/share/jupyter/lab/settings/overrides.json && \
+COPY requirements_conda.txt requirements_pip.txt /tmp/
+RUN RUN mkdir -p ~/.jupyterlab/user-settings/@jupyterlab/apputils-extension/ && \
+    echo '{ "theme":"JupyterLab Dark" }' > themes.jupyterlab-settings && \
     conda install --yes --file /tmp/requirements_conda.txt && \
     pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r /tmp/requirements_pip.txt && \
