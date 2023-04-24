@@ -4,8 +4,9 @@ FROM jupyter/base-notebook:latest
 # enable jupyterlab as default app
 ENV JUPYTER_ENABLE_LAB=true
 
-COPY requirements_conda.txt requirements_pip.txt /tmp/
-RUN conda install --yes --file /tmp/requirements_conda.txt && \
+COPY requirements_conda.txt requirements_pip.txt overrides.json /tmp/
+RUN ${NB_PREFIX}/share/jupyter/lab/settings/overrides.json && \
+    conda install --yes --file /tmp/requirements_conda.txt && \
     pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r /tmp/requirements_pip.txt && \
     jupyter lab build && \
