@@ -1,4 +1,6 @@
 # docker-jlab
 To run:
+change the path to the directory you want to work in
+you need to have X11 installed in your local system in order to use Ncview
 
-    sudo docker run --network=host -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/hgrosselindemann/Documents/:/work -w /work -e DISPLAY=$DISPLAY --user $(id -u):0 --group-add users hgrosselindemann/docker-jlab:main
+    sudo docker run --network=host -v /home/hgrosselindemann/Documents/:/work -w /work -e DISPLAY=$DISPLAY --user $(id -u):0 --group-add users hgrosselindemann/docker-jlab:main
