@@ -10,16 +10,14 @@
 name: Publish Docker image
 
 on:
-  release:
-    types: [published]
   pull_request:
     branches:
-      - master
+      - main
     paths-ignore:
       - '*.md'
   push:
     branches:
-      - master
+      - main
     paths-ignore:
       - '*.md'
 
