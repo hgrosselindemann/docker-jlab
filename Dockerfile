@@ -1,6 +1,6 @@
 # use jupyter notebook image
 FROM jupyter/base-notebook:latest
-
+USER root
 # enable jupyterlab as default app
 ENV JUPYTER_ENABLE_LAB=true
 
