@@ -17,8 +17,8 @@ on Windows using Docker Desktop:
   - Ports: 
     - set Host port to 8888
   - Volumes: 
-    - Code Directory: chosse Host path then set Container path to /home/jovyan/work
-    - Data Directory: chosse Host path then set Container path to /home/jovyan/data
+    - Code Directory: choose Host path then set Container path to /home/jovyan/work
+    - Data Directory: choose Host path then set Container path to /home/jovyan/data
   - Environment variables:
     - Variable to workdir then Value to /work
 ncview is not working on windows because of display forwarding issues between the linux subsystem and the windows display. I couldn't bother trying to solve that, sorry.
