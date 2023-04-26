@@ -21,6 +21,6 @@ on Windows using Docker Desktop:
     - Data Directory: choose Host path then set Container path to /home/jovyan/data
   - Environment variables:
     - Variable to workdir then Value to /work
-- open the link that looks like this: 'http://127.0.0.1:8888/lab?token='
+- open the link that looks like this: ht<span>tp://127<span>.0.0.1:8888/lab?token=
 
 ncview is not working on windows because of display forwarding issues between the linux subsystem and the windows display. I didn't bother trying to solve that, sorry.
