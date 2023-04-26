@@ -17,6 +17,7 @@ gsw
 h5netcdf
 h5py
 ipykernel>=6
+ipywidgets
 matplotlib-base
 nbclassic>=0.2.8  # See https://github.com/jupyterlab/jupyterlab/issues/10228
 nbval
