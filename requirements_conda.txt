@@ -24,7 +24,6 @@ nbgitpuller
 nco
 ncview
 netcdf4
-nfft
 nodejs
 nomkl
 numba
