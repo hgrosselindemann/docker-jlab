@@ -7,6 +7,18 @@ To pull:
 
 To run:
 change the path to the directory you want to work in
-you need to have X11 installed in your local system in order to use Ncview (for linux, I dont know how display forwarding works on windows)
+you need to have X11 installed in your local system in order to use Ncview
 
     sudo docker run --network=host -v /home/hgrosselindemann/Documents/:/work -w /work -e DISPLAY=$DISPLAY --user $(id -u):0 --group-add users hgrosselindemann/docker-jlab:main
+
+on Windows using Docker Desktop:
+- pull the image
+- run image with with following optional settings
+  - Ports: 
+    - set Host port to 8888
+  - Volumes: 
+    - Code Directory: chosse Host path then set Container path to /home/jovyan/work
+    - Data Directory: chosse Host path then set Container path to /home/jovyan/data
+  - Environment variables:
+    - Variable to workdir then Value to /work
+ncview is not working on windows because of display forwarding issues between the linux subsystem and the windows display. I couldn't bother trying to solve that, sorry.
