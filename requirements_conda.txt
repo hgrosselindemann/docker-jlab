@@ -16,6 +16,7 @@ git-lfs
 gsw
 h5netcdf
 h5py
+htop
 ipykernel>=6
 ipywidgets
 matplotlib-base
