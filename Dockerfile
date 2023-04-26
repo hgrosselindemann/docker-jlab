@@ -7,13 +7,13 @@ ENV JUPYTER_ENABLE_LAB=true
 COPY requirements_conda.txt requirements_pip.txt /tmp/
 COPY overrides.json /opt/conda/share/jupyter/lab/settings/
 
-RUN conda install --yes --file /tmp/requirements_conda.txt && \
+RUN mamba install --yes --file /tmp/requirements_conda.txt && \
     pip install --no-cache-dir --upgrade pip && \
     pip install --no-cache-dir -r /tmp/requirements_pip.txt && \
     jupyter labextension disable "@jupyterlab/apputils-extension:announcements" && \
     jupyter lab build && \
     # clean conda cache, index and package tarballs
-    conda clean -a && \
+    mamba clean -a && \
     # fix file permissions
     fix-permissions $CONDA_DIR && \
     fix-permissions $HOME
