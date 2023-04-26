@@ -22,4 +22,4 @@ on Windows using Docker Desktop:
   - Environment variables:
     - Variable to workdir then Value to /work
 
-ncview is not working on windows because of display forwarding issues between the linux subsystem and the windows display. I couldn't bother trying to solve that, sorry.
+ncview is not working on windows because of display forwarding issues between the linux subsystem and the windows display. I didn't bother trying to solve that, sorry.
