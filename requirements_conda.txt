@@ -11,6 +11,7 @@ dask-labextension
 distributed
 esmpy=8.3.1
 ffmpeg
+flox
 git
 git-lfs
 gsw
