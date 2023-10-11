@@ -1,4 +1,5 @@
 python>=3.9
+bokeh
 basemap
 cartopy
 cartopy_offlinedata
