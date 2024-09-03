@@ -14,7 +14,6 @@ esmpy
 ffmpeg
 flox
 git
-git-lfs
 gsw
 h5netcdf
 h5py
